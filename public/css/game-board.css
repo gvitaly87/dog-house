@@ -1,0 +1,572 @@
+html,
+body,
+.game-board {
+  height: 100%;
+  margin: 0;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . . . . . s36 s37 s38 s39 s40 s41 s42 s43 s44 s45 s46 s47 s48 . . . . . ."
+    ". p23 . . . . s35 . . . . . h30 . . . . . s49 . . . . p33 ."
+    ". . p22 . . . s34 . . . . . h31 . . . . . s50 . . . p32 . ."
+    ". . . p21 . . s33 . . . . . h32 . . . . . s51 . . p31 . . ."
+    ". . . . p20 . s32 . . . . . h33 . . . . . s52 . p30 . . . ."
+    ". . . . . . s31 . . . . . . . . . . . s53 . . . . . ."
+    "s24 s25 s26 s27 s28 s29 s30 . . . . . . . . . . . s54 s55 s56 s57 s58 s59 s60"
+    "s23 . . . . . . . . . . . . . . . . . . . . . . . s61"
+    "s22 . . . . . player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards . . . . . s62"
+    "s21 . . . . . player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards . . . . . s63"
+    "s20 . . . . . player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards . . . . . s64"
+    "s19 . . . . . player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards . . . . . s65"
+    "s18 h20 h21 h22 h23 . player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards . h43 h42 h41 h40 s66"
+    "s17 . . . . . player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards . . . . . s67"
+    "s16 . . . . . player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards . . . . . s68"
+    "s15 . . . . . player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards . . . . . s69"
+    "s14 . . . . . player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards player-cards . . . . . s70"
+    "s13 . . . . . . . . . . . . . . . . . . . . . . . s71"
+    "s12 s11 s10 s9 s8 s7 s6 . . . . . . . last-card last-card last-card . s78 s77 s76 s75 s74 s73 s72"
+    ". . . . . . s5 . . . . . . . last-card last-card last-card . s79 . . . . . ."
+    ". . . . p10 . s4 . . . . . h13 . last-card last-card last-card . s80 . p40 . . . ."
+    ". . . p11 . . s3 . . . . . h12 . last-card last-card last-card . s81 . . p41 . . ."
+    ". . p12 . . . s2 . . . . . h11 . last-card last-card last-card . s82 . . . p42 . ."
+    ". p13 . . . . s1 . . . . . h10 . . . . . s83 . . . . p43 ."
+    ". . . . . . s0 s95 s94 s93 s92 s91 s90 s89 s88 s87 s86 s85 s84 . . . . . .";
+}
+
+.s0 {
+  grid-area: s0;
+}
+
+.s1 {
+  grid-area: s1;
+}
+
+.s2 {
+  grid-area: s2;
+}
+
+.s3 {
+  grid-area: s3;
+}
+
+.s4 {
+  grid-area: s4;
+}
+
+.s5 {
+  grid-area: s5;
+}
+
+.s6 {
+  grid-area: s6;
+}
+
+.s7 {
+  grid-area: s7;
+}
+
+.s8 {
+  grid-area: s8;
+}
+
+.s9 {
+  grid-area: s9;
+}
+
+.s10 {
+  grid-area: s10;
+}
+
+.s11 {
+  grid-area: s11;
+}
+
+.s12 {
+  grid-area: s12;
+}
+
+.s13 {
+  grid-area: s13;
+}
+
+.s14 {
+  grid-area: s14;
+}
+
+.s15 {
+  grid-area: s15;
+}
+
+.s16 {
+  grid-area: s16;
+}
+
+.s17 {
+  grid-area: s17;
+}
+
+.s18 {
+  grid-area: s18;
+}
+
+.s19 {
+  grid-area: s19;
+}
+
+.s20 {
+  grid-area: s20;
+}
+
+.s21 {
+  grid-area: s21;
+}
+
+.s22 {
+  grid-area: s22;
+}
+
+.s23 {
+  grid-area: s23;
+}
+
+.s24 {
+  grid-area: s24;
+}
+
+.s25 {
+  grid-area: s25;
+}
+
+.s26 {
+  grid-area: s26;
+}
+
+.s27 {
+  grid-area: s27;
+}
+
+.s28 {
+  grid-area: s28;
+}
+
+.s29 {
+  grid-area: s29;
+}
+
+.s30 {
+  grid-area: s30;
+}
+
+.s31 {
+  grid-area: s31;
+}
+
+.s32 {
+  grid-area: s32;
+}
+
+.s33 {
+  grid-area: s33;
+}
+
+.s34 {
+  grid-area: s34;
+}
+
+.s35 {
+  grid-area: s35;
+}
+
+.s36 {
+  grid-area: s36;
+}
+
+.s37 {
+  grid-area: s37;
+}
+
+.s38 {
+  grid-area: s38;
+}
+
+.s39 {
+  grid-area: s39;
+}
+
+.s40 {
+  grid-area: s40;
+}
+
+.s41 {
+  grid-area: s41;
+}
+
+.s42 {
+  grid-area: s42;
+}
+
+.s43 {
+  grid-area: s43;
+}
+
+.s44 {
+  grid-area: s44;
+}
+
+.s45 {
+  grid-area: s45;
+}
+
+.s46 {
+  grid-area: s46;
+}
+
+.s47 {
+  grid-area: s47;
+}
+
+.s48 {
+  grid-area: s48;
+}
+
+.s49 {
+  grid-area: s49;
+}
+
+.s50 {
+  grid-area: s50;
+}
+
+.s51 {
+  grid-area: s51;
+}
+
+.s52 {
+  grid-area: s52;
+}
+
+.s53 {
+  grid-area: s53;
+}
+
+.s54 {
+  grid-area: s54;
+}
+
+.s55 {
+  grid-area: s55;
+}
+
+.s56 {
+  grid-area: s56;
+}
+
+.s57 {
+  grid-area: s57;
+}
+
+.s58 {
+  grid-area: s58;
+}
+
+.s59 {
+  grid-area: s59;
+}
+
+.s60 {
+  grid-area: s60;
+}
+
+.s61 {
+  grid-area: s61;
+}
+
+.s62 {
+  grid-area: s62;
+}
+
+.s63 {
+  grid-area: s63;
+}
+
+.s64 {
+  grid-area: s64;
+}
+
+.s65 {
+  grid-area: s65;
+}
+
+.s66 {
+  grid-area: s66;
+}
+
+.s67 {
+  grid-area: s67;
+}
+
+.s68 {
+  grid-area: s68;
+}
+
+.s69 {
+  grid-area: s69;
+}
+
+.s70 {
+  grid-area: s70;
+}
+
+.s71 {
+  grid-area: s71;
+}
+
+.s72 {
+  grid-area: s72;
+}
+
+.s73 {
+  grid-area: s73;
+}
+
+.s74 {
+  grid-area: s74;
+}
+
+.s75 {
+  grid-area: s75;
+}
+
+.s76 {
+  grid-area: s76;
+}
+
+.s77 {
+  grid-area: s77;
+}
+
+.s78 {
+  grid-area: s78;
+}
+
+.s79 {
+  grid-area: s79;
+}
+
+.s80 {
+  grid-area: s80;
+}
+
+.s81 {
+  grid-area: s81;
+}
+
+.s82 {
+  grid-area: s82;
+}
+
+.s83 {
+  grid-area: s83;
+}
+
+.s84 {
+  grid-area: s84;
+}
+
+.s85 {
+  grid-area: s85;
+}
+
+.s86 {
+  grid-area: s86;
+}
+
+.s87 {
+  grid-area: s87;
+}
+
+.s88 {
+  grid-area: s88;
+}
+
+.s89 {
+  grid-area: s89;
+}
+
+.s90 {
+  grid-area: s90;
+}
+
+.s91 {
+  grid-area: s91;
+}
+
+.s92 {
+  grid-area: s92;
+}
+
+.s93 {
+  grid-area: s93;
+}
+
+.s94 {
+  grid-area: s94;
+}
+
+.s95 {
+  grid-area: s95;
+}
+
+.h10 {
+  grid-area: h10;
+}
+
+.h11 {
+  grid-area: h11;
+}
+
+.h12 {
+  grid-area: h12;
+}
+
+.h13 {
+  grid-area: h13;
+}
+
+.h20 {
+  grid-area: h20;
+}
+
+.h21 {
+  grid-area: h21;
+}
+
+.h22 {
+  grid-area: h22;
+}
+
+.h23 {
+  grid-area: h23;
+}
+
+.h30 {
+  grid-area: h30;
+}
+
+.h31 {
+  grid-area: h31;
+}
+
+.h32 {
+  grid-area: h32;
+}
+
+.h33 {
+  grid-area: h33;
+}
+
+.h40 {
+  grid-area: h40;
+}
+
+.h41 {
+  grid-area: h41;
+}
+
+.h42 {
+  grid-area: h42;
+}
+
+.h43 {
+  grid-area: h43;
+}
+
+.p40 {
+  grid-area: p40;
+}
+
+.p41 {
+  grid-area: p41;
+}
+
+.p42 {
+  grid-area: p42;
+}
+
+.p43 {
+  grid-area: p43;
+}
+
+.p10 {
+  grid-area: p10;
+}
+
+.p11 {
+  grid-area: p11;
+}
+
+.p12 {
+  grid-area: p12;
+}
+
+.p13 {
+  grid-area: p13;
+}
+
+.p20 {
+  grid-area: p20;
+}
+
+.p21 {
+  grid-area: p21;
+}
+
+.p22 {
+  grid-area: p22;
+}
+
+.p23 {
+  grid-area: p23;
+}
+
+.p30 {
+  grid-area: p30;
+}
+
+.p31 {
+  grid-area: p31;
+}
+
+.p32 {
+  grid-area: p32;
+}
+
+.p33 {
+  grid-area: p33;
+}
+
+.player-cards {
+  grid-area: player-cards;
+}
+
+.last-card {
+  grid-area: last-card;
+}
+
+/* For presentation only, no need to copy the code below */
+.game-board * {
+  border: 1px solid red;
+  position: relative;
+}
+
+.game-board *:after {
+  /* content: attr(class); */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
