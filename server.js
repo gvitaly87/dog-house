@@ -83,15 +83,15 @@ wsServer.on("request", (req) => {
           return;
         }
         const seat = getSeat(game.table.seats);
-        game.clients[seat] = {
+        game.clients.push({
           clientId,
           username,
+          seat,
           empty: false,
           hand: [],
-        };
+        });
         const color = { 0: "blue", 1: "green", 2: "yellow", 3: "red" }[seat];
         game.table.seats[seat] = new Player(username, seat, color);
-        console.log(game.table.seats[seat]);
 
         //start the game
         if (game.clients.length === 4) {
