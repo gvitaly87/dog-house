@@ -89,30 +89,21 @@ wsServer.on("request", (req) => {
           empty: false,
           hand: [],
         };
+        const color = { 0: "blue", 1: "green", 2: "yellow", 3: "red" }[seat];
+        game.table.seats[seat] = new Player(username, seat, color);
+        console.log(game.table.seats[seat]);
 
-        game.table.seats[seat] = new Player(username, seat);
-
-        // if (game.hasStarted) {
-        //   game.table.seats[seat].folded = true;
-        // }
-
-        // //start the game
-        // if (game.clients.length >= 3 && !game.hasStarted) {
-        //   let { table, deck } = setQue(game.table, game.deck);
-        //   game.hasStarted = true;
-        //   game.table = table;
-        //   game.deck = deck;
-        //   updateGameState(game);
-        // }
+        //start the game
+        if (game.clients.length === 4) {
+          updateGameState(game);
+        }
 
         const payLoad = {
           method: "join",
           gameId: game.id,
-          gameStarted: game.hasStarted,
           table: game.table,
         };
-        if (!game.hasStarted) respondAllClients(clients, game, payLoad);
-        else clients[clientId].connection.send(JSON.stringify(payLoad));
+        respondAllClients(clients, game, payLoad);
       }
     }
     /***************** In Game Actions *****************/

@@ -113,9 +113,8 @@ ws.onmessage = (message) => {
     gameId = res.gameId;
     document.getElementById("gameId").innerText = gameId;
 
-    const { client, gameStarted } = res;
-    if (client.clientId === clientId) player = client;
-    joinPlayer(client, clientId, player, table, gameStarted);
+    const { client } = res;
+    player = client;
   }
 
   // Error message
