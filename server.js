@@ -9,6 +9,7 @@ const path = require("path");
 const getUniqueID = require("./lib/getUniqueID");
 const getSeat = require("./lib/getSeat");
 const respondAllClients = require("./lib/respondAllClients");
+const initGame = require("./lib/initGame");
 
 const Game = require("./models/game");
 const Player = require("./models/player");
@@ -95,6 +96,7 @@ wsServer.on("request", (req) => {
 
         //start the game
         if (game.clients.length === 4) {
+          initGame(game);
           updateGameState(game);
         }
 

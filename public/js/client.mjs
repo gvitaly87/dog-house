@@ -1,4 +1,5 @@
 import copyGameID from "/js/copyGameID.mjs";
+import insertCard from "/js/insertCard.mjs";
 
 // Client Global Variable
 let clientId = null;
@@ -93,7 +94,7 @@ ws.onmessage = (message) => {
     gameId = res.game.id;
     document.getElementById("gameId").innerText = gameId;
     let username = document.getElementById("username").value;
-
+    copyGameID();
     const payLoad = {
       method: "join",
       clientId,
@@ -106,6 +107,12 @@ ws.onmessage = (message) => {
 
   //updated game state from server
   if (res.method === "update") {
+    const client = res.client;
+    const cardsContainer = document.getElementById("player-cards");
+    cardsContainer.innerHTML = "";
+    client.hand.forEach((card) => {
+      cardsContainer.innerHTML += insertCard(card);
+    });
   }
   //A new player joins
   if (res.method === "join") {
