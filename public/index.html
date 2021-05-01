@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/js/client.mjs" type="module"></script>
+    <title>Dog House</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="grid-container">
+      <div class="nav-bar">
+        <img class="logo" src="/" />
+
+        <!-- Play Now Dropdown Menu -->
+
+        <div id="nav">
+          <div class="hidden">Player ID: <span id="playerId"></span></div>
+
+          <div class="game-info-container">
+            <div class="username">
+              <div><label for="username">ENTER USERNAME:</label></div>
+              <input
+                type="text"
+                maxlength="10"
+                id="username"
+                value="Guest"
+              />
+            </div>
+
+            <div>
+              <label for="txtGameId"
+                >ENTER A GAME ID & JOIN A GAME IN PROGRESS:
+              </label>
+
+              <input type="text" id="txtGameId" />
+            </div>
+
+            <div class="join">
+              <button id="btnJoin">JOIN GAME</button>
+              <div class="error"></div>
+            </div>
+
+            <div class="create">
+              <div>
+                <label for="btnCreate"
+                  >CREATE A UNIQUE PRIVATE TABLE:</label
+                >
+              </div>
+              <button id="btnCreate">CREATE GAME</button>
+            </div>
+
+            <div>
+              <button id="btnCopyId" class="hidden">COPY GAME ID</button>
+            </div>
+            <span id="gameId"></span>
+          </div>
+        </div>
+
+      <!-- Game Chat & Log -->
+
+      <div class="game-log">
+        <div class="game-log-txt" id="game-log"></div>
+
+        <input type="text" id="chat-message" class="game-log-txt-type" />
+      </div>
+
+      <!-- Footer -->
+
+      <div class="footer">
+        <footer>
+          &copy; 2021 . MIT License.
+        </footer>
+      </div>
+
+      <!-- Game info & setup -->
+    </div>
+  </body>
+</html>
