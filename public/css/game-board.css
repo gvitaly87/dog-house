@@ -559,28 +559,25 @@ body,
 .last-card {
   grid-area: last-card;
 }
-.player1,
-.player2,
-.player3,
-.player4 {
+.player-name {
   font-size: 1.2rem;
 }
-.player1 {
+.player-name.player1 {
   grid-area: player1;
   color: var(--player-color-light);
   background-color: var(--player-color-dark);
 }
-.player2 {
+.player-name.player2 {
   grid-area: player2;
   color: var(--player2-color-light);
   background-color: var(--player2-color-dark);
 }
-.player3 {
+.player-name.player3 {
   grid-area: player3;
   color: var(--player3-color-light);
   background-color: var(--player3-color-dark);
 }
-.player4 {
+.player-name.player4 {
   grid-area: player4;
   color: var(--player4-color-light);
   background-color: var(--player4-color-dark);

@@ -5,7 +5,7 @@ const generateBoard = () => {
     boardHTML += `<div class="board-section s${i}"></div>`;
   }
   for (let i = 1; i < 5; i++) {
-    boardHTML += `<div class="player-name player${i}">Waiting for Player ${i}...</div>`;
+    boardHTML += `<div class="player-name player${i}">Waiting...</div>`;
     for (let j = 0; j < 4; j++) {
       boardHTML += `
       <div class="board-section h${i}${j}"></div>

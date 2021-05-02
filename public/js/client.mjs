@@ -131,7 +131,9 @@ ws.onmessage = (message) => {
 
     // Place pawns on the board
     for (let i = 0; i < 4; i++) {
-      document.querySelector(`.p1${i}`).classList.add("filled");
+      document
+        .querySelector(`.p1${i}`)
+        .classList.add("player1", "pawn", `pawn${i}`);
     }
     table.seats.forEach((opponent) => {
       if (!opponent.empty) {
@@ -142,7 +144,7 @@ ws.onmessage = (message) => {
           for (let i = 0; i < 4; i++) {
             document
               .querySelector(`.p${adjustedSeat}${i}`)
-              .classList.add("filled");
+              .classList.add(`player${adjustedSeat}`, "pawn", `pawn${i}`);
           }
         }
       }

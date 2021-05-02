@@ -10,7 +10,7 @@
   background-color: var(--player-color-light);
 }
 
-:is(.p10, .p11, .p12, .p13).filled {
+.player1.pawn {
   background-color: var(--player-color);
 }
 
@@ -26,7 +26,7 @@
   background-color: var(--player2-color-light);
 }
 
-:is(.p20, .p21, .p22, .p23).filled {
+.player2.pawn {
   background-color: var(--player2-color);
 }
 
@@ -42,7 +42,7 @@
   background-color: var(--player3-color-light);
 }
 
-:is(.p30, .p31, .p32, .p33).filled {
+.player3.pawn {
   background-color: var(--player3-color);
 }
 
@@ -58,6 +58,6 @@
   background-color: var(--player4-color-light);
 }
 
-:is(.p40, .p41, .p42, .p43).filled {
+.player4.pawn {
   background-color: var(--player4-color);
 }

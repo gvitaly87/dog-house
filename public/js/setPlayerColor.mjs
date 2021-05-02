@@ -21,6 +21,11 @@ const setPlayerColor = (seat) => {
       root.style.setProperty("--player3-hue", colorsHue.green);
       root.style.setProperty("--player4-hue", colorsHue.yellow);
       break;
+    default:
+      root.style.setProperty("--player-hue", colorsHue.blue);
+      root.style.setProperty("--player2-hue", colorsHue.green);
+      root.style.setProperty("--player3-hue", colorsHue.yellow);
+      root.style.setProperty("--player4-hue", colorsHue.red);
   }
 };
 
