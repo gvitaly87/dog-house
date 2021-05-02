@@ -126,11 +126,20 @@ ws.onmessage = (message) => {
     const { client } = res;
     player = client;
     document.querySelector(".player1").innerHTML = client.username;
+    for (let i = 0; i < 4; i++) {
+      document.querySelector(`.p1${i}`).classList.add("filled");
+    }
     table.seats.forEach((opponent) => {
       if (!opponent.empty) {
         if (opponent.seat !== client.seat) {
-          const cssSelector = findOppSelector(client.seat, opponent.seat, 4);
+          const adjustedSeat = findOppSelector(client.seat, opponent.seat, 4);
+          const cssSelector = `.player${adjustedSeat}`;
           document.querySelector(cssSelector).innerText = opponent.username;
+          for (let i = 0; i < 4; i++) {
+            document
+              .querySelector(`.p${adjustedSeat}${i}`)
+              .classList.add("filled");
+          }
         }
       }
     });

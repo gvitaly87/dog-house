@@ -1,0 +1,25 @@
+:root {
+  --player-hue: 240;
+  --player2-hue: 120;
+  --player3-hue: 60;
+  --player4-hue: 0;
+  --light: 90%;
+  --mid: 50%;
+  --dark: 10%;
+
+  --player-color: hsl(var(--player-hue), 100%, var(--mid));
+  --player-color-light: hsl(240deg, 100%, var(--light));
+  --player-color-dark: hsl(240deg, 100%, var(--dark));
+
+  --player2-color: hsl(var(--player2-hue), 100%, var(--mid));
+  --player2-color-light: hsl(var(--player2-hue), 100%, var(--light));
+  --player2-color-dark: hsl(var(--player2-hue), 100%, var(--dark));
+
+  --player3-color: hsl(var(--player3-hue), 100%, var(--mid));
+  --player3-color-light: hsl(var(--player3-hue), 100%, var(--light));
+  --player3-color-dark: hsl(var(--player3-hue), 100%, var(--dark));
+
+  --player4-color: hsl(var(--player4-hue), 100%, var(--mid));
+  --player4-color-light: hsl(var(--player4-hue), 100%, var(--light));
+  --player4-color-dark: hsl(var(--player4-hue), 100%, var(--dark));
+}

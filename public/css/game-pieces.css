@@ -1,0 +1,63 @@
+.p10,
+.p11,
+.p12,
+.p13,
+.h10,
+.h11,
+.h12,
+.h13 {
+  border: 1px solid var(--player-color-dark);
+  background-color: var(--player-color-light);
+}
+
+:is(.p10, .p11, .p12, .p13).filled {
+  background-color: var(--player-color);
+}
+
+.p20,
+.p21,
+.p22,
+.p23,
+.h20,
+.h21,
+.h22,
+.h23 {
+  border: 1px solid var(--player2-color-dark);
+  background-color: var(--player2-color-light);
+}
+
+:is(.p20, .p21, .p22, .p23).filled {
+  background-color: var(--player2-color);
+}
+
+.p30,
+.p31,
+.p32,
+.p33,
+.h30,
+.h31,
+.h32,
+.h33 {
+  border: 1px solid var(--player3-color-dark);
+  background-color: var(--player3-color-light);
+}
+
+:is(.p30, .p31, .p32, .p33).filled {
+  background-color: var(--player3-color);
+}
+
+.p40,
+.p41,
+.p42,
+.p43,
+.h40,
+.h41,
+.h42,
+.h43 {
+  border: 1px solid var(--player4-color-dark);
+  background-color: var(--player4-color-light);
+}
+
+:is(.p40, .p41, .p42, .p43).filled {
+  background-color: var(--player4-color);
+}

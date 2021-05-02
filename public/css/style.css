@@ -1,6 +1,3 @@
-.hidden {
-  display: none;
-}
 .deck {
   height: 100%;
   width: 100%;
@@ -12,14 +9,6 @@
   border-radius: 0.5rem;
   color: white;
   user-select: none;
-}
-
-.computer-deck {
-  background-color: green;
-}
-
-.player-deck {
-  background-color: blue;
 }
 
 .text {
