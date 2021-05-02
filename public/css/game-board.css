@@ -4,7 +4,9 @@ body,
   height: 100%;
   margin: 0;
 }
-
+.board-section {
+  border-radius: 50%;
+}
 .game-board {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
