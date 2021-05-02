@@ -1,6 +1,7 @@
 import copyGameID from "/js/copyGameID.mjs";
 import insertCard from "/js/insertCard.mjs";
 import generateBoard from "/js/generateBoard.mjs";
+import findOppSelector from "/js/findOppSelector.mjs";
 
 // Client Global Variable
 let clientId = null;
@@ -124,6 +125,15 @@ ws.onmessage = (message) => {
 
     const { client } = res;
     player = client;
+    document.querySelector(".player1").innerHTML = client.username;
+    table.seats.forEach((opponent) => {
+      if (!opponent.empty) {
+        if (opponent.seat !== client.seat) {
+          const cssSelector = findOppSelector(client.seat, opponent.seat, 4);
+          document.querySelector(cssSelector).innerText = opponent.username;
+        }
+      }
+    });
   }
 
   // Error message

@@ -3,6 +3,7 @@ module.exports = class Player {
     this.seat = seat;
     this.username = name;
     this.pawns = [];
+    this.empty = false;
     for (let i = 0; i < 4; i++) {
       this.pawns.push({
         color,
