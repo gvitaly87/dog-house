@@ -1,5 +1,6 @@
 import copyGameID from "/js/copyGameID.mjs";
 import insertCard from "/js/insertCard.mjs";
+import generateBoard from "/js/generateBoard.mjs";
 
 // Client Global Variable
 let clientId = null;
@@ -12,6 +13,7 @@ let player = {};
 const HOST = location.origin.replace(/^http/, "ws");
 let ws = new WebSocket(HOST);
 
+generateBoard();
 // New/Join Game
 const btnCreate = document.getElementById("btnCreate");
 const btnJoin = document.getElementById("btnJoin");

@@ -1,0 +1,33 @@
+<section class="init-game">
+  <div class="hidden">Player ID: <span id="playerId"></span></div>
+
+  <div class="game-info-container">
+    <div class="username">
+      <div><label for="username">ENTER USERNAME:</label></div>
+      <input type="text" maxlength="10" id="username" value="Guest" />
+    </div>
+
+    <div>
+      <label for="txtGameId">ENTER A GAME ID & JOIN A GAME IN PROGRESS: </label>
+
+      <input type="text" id="txtGameId" />
+    </div>
+
+    <div class="join">
+      <button id="btnJoin">JOIN GAME</button>
+      <div class="error"></div>
+    </div>
+
+    <div class="create">
+      <div>
+        <label for="btnCreate">CREATE A UNIQUE PRIVATE TABLE:</label>
+      </div>
+      <button id="btnCreate">CREATE GAME</button>
+    </div>
+
+    <div>
+      <button id="btnCopyId" class="hidden">COPY GAME ID</button>
+    </div>
+    <span id="gameId"></span>
+  </div>
+</section>

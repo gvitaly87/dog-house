@@ -5,6 +5,7 @@ const websocketServer = require("websocket").server;
 const express = require("express");
 const app = express();
 const path = require("path");
+const routes = require("./routes");
 
 const getUniqueID = require("./lib/getUniqueID");
 const getSeat = require("./lib/getSeat");
@@ -17,6 +18,31 @@ const PORT = process.env.PORT || 3000;
 
 // Express
 app.use(express.static(path.join(__dirname, "./public")));
+
+app.get("/favicon.ico", (req, res) => res.sendStatus(204));
+
+app.use(express.urlencoded({ extended: true }));
+
+app.set("view engine", "ejs");
+
+app.use("/", routes);
+
+//404 Not Found page.
+app.use((req, res, next) => {
+  const err = new Error("Requested page could not be found");
+  err.status = 404;
+  next(err);
+});
+
+// Catch all the errors that might have occurred
+app.use((err, req, res, next) => {
+  res.locals.message = err.message;
+  console.error(err);
+  const status = err.status || 500;
+  res.locals.status = status;
+  res.status(status);
+  res.render("pages/error", { pageTitle: `Error ${status}` });
+});
 
 // WebSocket
 const httpServer = http.createServer(app);
