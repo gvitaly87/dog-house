@@ -6,7 +6,7 @@ module.exports = class Player {
     this.empty = false;
     for (let i = 0; i < 4; i++) {
       this.pawns.push({
-        color,
+        id: i,
         position: -1,
       });
     }

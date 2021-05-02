@@ -8,8 +8,8 @@
   --dark: 10%;
 
   --player-color: hsl(var(--player-hue), 100%, var(--mid));
-  --player-color-light: hsl(240deg, 100%, var(--light));
-  --player-color-dark: hsl(240deg, 100%, var(--dark));
+  --player-color-light: hsl(var(--player-hue), 100%, var(--light));
+  --player-color-dark: hsl(var(--player-hue), 100%, var(--dark));
 
   --player2-color: hsl(var(--player2-hue), 100%, var(--mid));
   --player2-color-light: hsl(var(--player2-hue), 100%, var(--light));
