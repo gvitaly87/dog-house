@@ -3,6 +3,7 @@ import insertCard from "/js/insertCard.mjs";
 import generateBoard from "/js/generateBoard.mjs";
 import findOppSelector from "/js/findOppSelector.mjs";
 import setPlayerColor from "/js/setPlayerColor.mjs";
+import playerMove from "/js/playerMove.mjs";
 
 // Client Global Variable
 let clientId = null;
@@ -111,12 +112,16 @@ ws.onmessage = (message) => {
 
   //updated game state from server
   if (res.method === "update") {
+    table = res.table;
     const client = res.client;
     const cardsContainer = document.getElementById("player-cards");
     cardsContainer.innerHTML = "";
     client.hand.forEach((card) => {
       cardsContainer.innerHTML += insertCard(card);
     });
+    if (client.seat === table.playerToAct) {
+      playerMove();
+    }
   }
   //A new player joins
   if (res.method === "join") {

@@ -61,3 +61,7 @@
 .player4.pawn {
   background-color: var(--player4-color);
 }
+
+.selected {
+  transform: scale(1.2);
+}
