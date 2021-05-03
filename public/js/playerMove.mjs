@@ -1,8 +1,16 @@
-const selectCard = (card) => {
-  card.classList.toggle("selected");
-  const cardValue = card.dataset.value;
+const selectCard = (selectedCard) => {
+  selectedCard.classList.toggle("selected");
+  const cardValue = selectedCard.dataset.value;
+
+  const cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    if (card !== selectedCard && card.classList.contains("selected")) {
+      card.classList.remove("selected");
+    }
+  });
   console.log(cardValue);
 };
+
 const playerMove = () => {
   const game = document.querySelector(".game-board");
   const playerCards = document.querySelector(".player-cards");
